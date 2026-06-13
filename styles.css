@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+body{ 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .burst-menu {
     position: relative;
     width: 200px;
@@ -16,13 +23,17 @@
     transform: translate(-50%, -50%);
     z-index: 10;
     border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
 }
 
 .avatar-img {
     width: 150px;
     height: 150px;
+    object-fit: cover;
     border-radius: 50%;
-    aspect-ratio: 1 / 1;
+    
 }
 
 .icon {
@@ -33,5 +44,6 @@
     opacity: 0;
     transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 300ms ease;
     will-change: transform, opacity;
+    
 } 
 
