@@ -4,6 +4,25 @@
     --avatar-size: clamp(140px, 25vw, 200px)
 }
 
+@keyframes arrow-bounce {
+    0%, 100% {
+        transform: translateY(0);
+
+    }
+    
+    25% {
+        transform: translateY(-4px) rotate(-1deg);
+    }
+
+    50%{
+        transform: translate(-8px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(1deg);
+    }
+}
+
 
 * {
     margin: 0;
@@ -107,13 +126,13 @@ h1 {
 .arrow-doodle {
     position: absolute;
     top: -20%;
-    left: -20%;
+    left: -15%;
     width: 50%;
     height: auto;
     z-index: 5;
     pointer-events: none;
     rotate: 40deg;
-  
+    animation: arrow-bounce 10s ease-in-out infinite;
 }
 
 .click-me-text {
@@ -128,5 +147,4 @@ h1 {
     white-space: nowrap;
     z-index: 5;
 }
-
 
