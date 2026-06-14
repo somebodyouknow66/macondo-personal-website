@@ -15,10 +15,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: black;
+    background-image: radial-gradient(rgba(245, 245, 245, 0.511) 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
+    color: whitesmoke;
 }
 
 h1 {
     font-family: 'Coming Soon', cursive;
+    font-size: clamp(2rem, 4vw, 8rem);
     margin: 0;
     line-height: 1;
 }
@@ -61,7 +67,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
-
+    color: white;
     transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 300ms ease;
     will-change: transform, opacity;
     
