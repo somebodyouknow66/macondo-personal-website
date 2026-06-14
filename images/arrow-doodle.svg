@@ -1,0 +1,33 @@
+<svg
+  viewBox="0 0 800 400"
+  xmlns="http://www.w3.org/2000/svg"
+  class="scribble-arrow"
+>
+  <path
+    d="
+      M55 80
+      C180 -10,220 60,150 220
+      C100 340,260 340,380 250
+      C500 160,520 80,430 90
+      C340 100,320 220,410 280
+      C510 350,650 320,720 300
+
+      M720 300
+      C690 285,665 270,640 255
+
+      M720 300
+      C690 310,665 330,650 355
+
+      M650 355
+      C665 330,680 315,720 300
+
+      M640 255
+      C670 270,690 285,720 300
+    "
+    fill="none"
+    stroke="currentColor"
+    stroke-width="14"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
