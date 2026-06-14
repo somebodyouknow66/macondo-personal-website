@@ -19,7 +19,8 @@ body{
 
 h1 {
     font-family: 'Coming Soon', cursive;
-
+    margin: 0;
+    line-height: 1;
 }
 
 .hero-section {
@@ -34,7 +35,6 @@ h1 {
     position: relative;
     width: var(--avatar-size);
     height: var(--avatar-size);
-    margin-top: 6rem;
 }
 
 .avatar {
