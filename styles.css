@@ -174,6 +174,7 @@ h1 {
 
 [tooltip] {
     position: relative;
+    font-family: 'Coming Soon', cursive;
 }
 
 [tooltip]::before,
@@ -212,4 +213,85 @@ h1 {
 [tooltip]:hover::after {
     display: block;
     opacity: 0.9;
+}
+
+
+.dock {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.dock-items {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.6rem;
+    padding: 0.5rem 0.85rem;
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid rgba(245, 245, 245, 0.12);
+    border-radius: 9999px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.dock-item {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 245, 245, 0.08);
+    background: #1a1a1a;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: width 150ms ease-out, height 150ms ease-out, background 150ms ease;
+    will-change: width, height;
+}
+
+.dock-item i {
+    font-size: 1.15rem;
+    transition: font-size 150ms ease-out;
+}
+
+.dock-item:hover, 
+.dock-item:focus-visible {
+    font-size: 1.15rem;
+    transition: font-size 150ms ease-out;
+}
+
+.dock-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: red;
+}
+
+@media (max-width: 480px) {
+    .dock {
+        bottom: 1rem;
+    }
+
+    .dock-items {
+        gap: 0.4rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .dock-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dock-item i {
+        font-size: 1rem;
+    }
 }
