@@ -199,7 +199,7 @@
 
     cat = document.createElement("div");
     cat.style.position = "absolute";
-    cat.style.zIndex = "999999"
+    cat.style.zIndex = "999999";
     //cat.style.backgroundImage = 'url("images/cat/atlas/cat1.png")';
     cat.style.backgroundImage =
       'url("data:image/png;base64,' + cat1_base64 + '")';
@@ -213,7 +213,6 @@
       focused = !focused;
       showMeow();
     });
-
 
     // set the cat atop a random spot on the page
     //var at = obs[Math.floor(Math.random() * obs.length)];
@@ -336,11 +335,11 @@
     if (ai_state === "walk") {
       if (ai_direction === 0) {
         x += movespeed;
-		dir = 0;
-	} else {
-		x -= movespeed;
-		dir = 1;
-	}
+        dir = 0;
+      } else {
+        x -= movespeed;
+        dir = 1;
+      }
 
       astep++;
     }
@@ -368,12 +367,10 @@
       y = y - jumpvel;
 
       if (y - catstates[catstate][3] < 0) y = catstates[catstate][3];
-		   jumpvel--;
+      jumpvel--;
       if (jumpvel == -1) jumping = false;
-	
-
     }
-   
+
     if (y + 1 > bounds[1]) y = bounds[1] - 1;
     if (y - catstates[catstate][3] < 0) y = catstates[catstate][3];
 
@@ -474,7 +471,103 @@
     if (bounds[1] < w[1]) bounds[1] = w[1];
   }
 
- 
+  function showMeow() {
+    console.log("working");
+    console.log("showMeow called");
+    console.log("cat.style.left:", cat.style.left);
+    console.log("cat.style.top:", cat.style.top);
+    console.log("x:", x, "y:", y);
+    var old = document.getElementById("cat-bubble");
+    if (old && parentNode) old.parentNode.removeChild(old);
+
+    var bubble = document.createElement("div");
+    bubble.id = "cat-bubble";
+
+    var shadow = [
+      "0 -2px 0 0 #222",
+      "0 2px 0 0 #222",
+      "-2px 0 0 0 #222",
+      "2px 0 0 0 #222",
+      "0 -4px 0 0 #fff",
+      "0 4px 0 0 #fff",
+      "-4px 0 0 0 #fff",
+      "4px 0 0 0 #fff",
+      "2px -2px 0 0 #222",
+      "-2px -2px 0 0 #222",
+      "2px 2px 0 0 #222",
+      "-2px 2px 0 0 #222",
+    ].join(",");
+
+    bubble.style.position = "absolute";
+    bubble.style.background = "#fff",
+    bubble.style.fontFamily = "monospace",
+    bubble.style.fontSize = "10px";
+    bubble.style.lineHeight = "1.4";
+    bubble.style.padding = "6px 8px";
+    bubble.style.whiteSpace = "nowrap";
+    bubble.style.border = "0";
+    bubble.style.boxShadow = shadow;
+    bubble.style.zIndex = "99999999";
+    bubble.style.color = "#222";
+
+    var speech = [
+      "meow",
+      "meow meow",
+      "meow, meow, meow",
+      "space monkey",
+      "purrrrrr",
+    ];
+   bubble.appendChild(document.createTextNode(
+    speech[Math.floor(Math.random() * speech.length)] + " ₍^. .^₎⟆"
+   ));
+
+    var bubbleTail = document.createElement("div");
+    bubbleTail.style.cssText = [
+      "position: absolute",
+      "width: 4px",
+      "height: 4px",
+      "background: #222",
+      "bottom: -6px",
+      "left: 10px",
+    ].join(";");
+    bubble.appendChild(bubbleTail);
+
+    var bubbleTail2 = document.createElement("div");
+    bubbleTail2.style.cssText = [
+      "position: absolute",
+      "width: 4px",
+      "height: 4px",
+      "background: #222",
+      "bottom: -10px",
+      "left: 6px",
+    ].join(";");
+    bubble.appendChild(bubbleTail2);
+
+    var bubbleTail3 = document.createElement("div");
+    bubbleTail3.style.cssText = [
+      "position: absolute",
+      "width: 4px",
+      "height: 4px",
+      "background: #222",
+      "bottom: -12px",
+      "left: 2px",
+    ].join(";");
+    bubble.appendChild(bubbleTail3);
+
+    document.body.appendChild(bubble);
+
+    // setting bubble's position
+
+    var catLeft = parseInt(cat.style.left, 10) || x;
+    var catTop = parseInt(cat.style.top, 10) || y;
+    bubble.style.left = catLeft + 15 + "px";
+    bubble.style.top = catTop - bubble.offsetHeight - 10 + "px";
+
+    // bubble vanishes after 2 secs
+
+    setTimeout(function () {
+      if (bubble.parentNode) bubble.parentNode.removeChild(bubble);
+    }, 2500);
   }
 
   function all_text_nodes(element, cb) {
