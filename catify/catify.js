@@ -199,6 +199,7 @@
 
     cat = document.createElement("div");
     cat.style.position = "absolute";
+    cat.style.zIndex = "999999"
     //cat.style.backgroundImage = 'url("images/cat/atlas/cat1.png")';
     cat.style.backgroundImage =
       'url("data:image/png;base64,' + cat1_base64 + '")';
@@ -210,11 +211,9 @@
 
     listener_add(cat, "click", function (e) {
       focused = !focused;
+      showMeow();
     });
-    listener_add(cat, "dblclick", function (e) {
-      cat.parentNode.removeChild(cat);
-      cat = null;
-    });
+
 
     // set the cat atop a random spot on the page
     //var at = obs[Math.floor(Math.random() * obs.length)];
@@ -473,6 +472,9 @@
     bounds = document_size();
     var w = window_size();
     if (bounds[1] < w[1]) bounds[1] = w[1];
+  }
+
+ 
   }
 
   function all_text_nodes(element, cb) {
