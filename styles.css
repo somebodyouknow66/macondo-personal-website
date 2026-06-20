@@ -295,3 +295,30 @@ h1 {
         font-size: 1rem;
     }
 }
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-window {
+    width: min(680px, 92vw);
+    height: min(480px, 85vh);
+    background: rgba(28, 28, 30, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+}
