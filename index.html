@@ -43,5 +43,29 @@
 </nav>
 
 
+<div class="modal-overlay" role="dialog" aria-modal="true">
+<div class="modal-window">
+    <div class="modal-titlebar">
+        <div class="modal-trafic-lights">
+            <button class="modal-tl modal-close">
+                <svg width="6" height="6" viewBox="0 0 6 6"><path d="M1 1l4 4M5 1l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <button class="modal-tl modal-minimize" tabindex="-1"></button>
+          <button class="modal-tl modal-maximise"></button>
+        </div>
+        <span class="modal-title-text"></span>
+    </div>
+</div>
+<div class="modal-body">
+    <nav class="modal-sidebar">
+        <button class="modal-nav-item" data-section="projects"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></button>
+        <button class="modal-nav-item" data-section="experience"><i class="fa-solid fa-briefcase"></i><span>Experience</span></button>
+        <button class="modal-nav-item" data-section="notes"><i class="fa-solid fa-note-sticky"></i><span>Notes</span></button>
+        <button class="modal-nav-item" data-section="about"><i class="fa-solid fa-user"></i><span>About me</span></button>
+    </nav>
+    <div class="modal-content" id="modal-content"></div>
+</div>
+</div>
+
 </body>
 </html>
