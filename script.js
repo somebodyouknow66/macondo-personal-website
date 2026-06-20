@@ -19,7 +19,7 @@ document.querySelectorAll('.dock-item').forEach(btn => {
     });
 });
 
-document.querySelector('modal-close').addEventListener('keydown', e => {
+document.addEventListener('keydown', e => {
     if (e.key === 'Escape' ) overlay.classList.remove('open');
 });
 
