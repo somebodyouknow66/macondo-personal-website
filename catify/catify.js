@@ -210,7 +210,8 @@
     cat.className = "catify";
 
     listener_add(cat, "click", function (e) {
-      focused = !focused;
+      ai_state = "idle";
+      ai_timer = 150;
       showMeow();
     });
 
