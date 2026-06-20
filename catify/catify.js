@@ -351,8 +351,8 @@
       x = 0;
       ai_direction = 0;
     }
-    if (x + catstates[catstate][2] > bounds[0]) {
-      x = bounds[0] - catstates[catstate][2];
+    if (x + catstates[catstate][2] * cat_scale > bounds[0]) {
+      x = bounds[0] - catstates[catstate][2] * cat_scale;
       ai_direction = 1;
     }
 
