@@ -34,8 +34,6 @@ const modalContents = {
             title: 'Featured',
             items: [
                 { name: 'Clarity', desc: 'Clarity is an AI-powered developer tool that eliminates the most frustrating part of software development — joining a new codebase blind.', tag: 'IBM, Hackathon', url: 'https://lablab.ai/ai-hackathons/ibm-bob-hackathon/somebodyouknow/clarity' },
-                { name: 'Clarity', desc: 'Clarity is an AI-powered developer tool that eliminates the most frustrating part of software development — joining a new codebase blind.', tag: 'IBM, Hackathon', url: 'https://lablab.ai/ai-hackathons/ibm-bob-hackathon/somebodyouknow/clarity' },
-                { name: 'Clarity', desc: 'Clarity is an AI-powered developer tool that eliminates the most frustrating part of software development — joining a new codebase blind.', tag: 'IBM, Hackathon', url: 'https://lablab.ai/ai-hackathons/ibm-bob-hackathon/somebodyouknow/clarity' },
             ]
         }]
     },

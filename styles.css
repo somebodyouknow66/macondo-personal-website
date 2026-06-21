@@ -316,6 +316,7 @@ h1 {
 .modal-window {
     width: min(680px, 92vw);
     height: min(480px, 85vh);
+    font-family: 'Coming Soon', sans-serif;
     background: rgba(28, 28, 30, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
@@ -447,7 +448,7 @@ h1 {
 
 .modal-nav-item.active {
     background: rgba(255, 255, 255, 0.07);
-    color: rgba(245, 245, 245, 0.85);
+    color: whitesmoke;
 }
 
 .modal-content {
@@ -459,4 +460,27 @@ h1 {
     gap: 24px;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+.mdf-cotnent::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+}
+
+.modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-section-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.3);
 }
