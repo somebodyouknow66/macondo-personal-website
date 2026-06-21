@@ -73,9 +73,9 @@ function renderContent(section) {
             ${sec.items.map(item => {
                 if (section === 'projects'){
                    return  `
-                    <div class="modal-card modal-card-projects">
+                    <div class="modal-card">
                     <img class="modal-card-img" src="${item.img}">
-                    <div class="modal-class-header">
+                    <div class="modal-card-header">
                     <span class="modal-card-name">${item.name}</span>
                     ${item.tag ? `<span class="modal-tag">${item.tag}</span>` : ''}
                     </div>
@@ -87,7 +87,7 @@ function renderContent(section) {
                 } else {
                     return `
                     <div class="modal-card">
-                    <div class="modal-class-header">
+                    <div class="modal-card-header">
                     <span class="modal-card-name">${item.name}</span>
                     ${item.tag ? `<span class="modal-tag">${item.tag}</span>` : ''}
                     </div>
