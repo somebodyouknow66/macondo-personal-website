@@ -9,13 +9,7 @@ document.querySelectorAll('.dock-item').forEach(btn => {
         const section = btn.dataset.modal;
         const isOpen = overlay.classList.contains('open');
         const isSame = overlay.dataset.current === section;
-
-        if (isOpen && isSame) {
-            overlay.classList.remove('open');
-        } else {
-            overlay.dataset.current = section;
-            openModal(section);
-        }
+        isOpen && isSame ? closeModal() : openModal(section);
     });
 });
 
@@ -97,3 +91,25 @@ function openModal(section) {
     overlay.classList.add('open');
     document.querySelectorAll('.dock-item').forEach(b => b.classList.remove('active'));
 }
+
+function closeModal() {
+    overlay.classList.remove('open');
+    document.querySelectorAll('.dock-item').forEach(b => b.classList.remove('active'));
+}
+
+document.querySelector('.modal-close').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape'){
+        closeModal();
+    }
+})
+
+overlay.addEventListener('click', e => {
+    if (e.target === overlay) {
+        closeModal()
+    }
+})
+
+document.querySelectorAll('.modal-nav-item').forEach(btn => {
+    btn.addEventListener('click', () => renderContent(btn.dataset.section));
+})
