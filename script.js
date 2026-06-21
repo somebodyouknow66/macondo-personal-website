@@ -14,7 +14,7 @@ document.querySelectorAll('.dock-item').forEach(btn => {
             overlay.classList.remove('open');
         } else {
             overlay.dataset.current = section;
-            overlay.classList.add('open');
+            openModal(section);
         }
     });
 });
@@ -68,3 +68,35 @@ const modalContents = {
     }
 };
 
+function renderContent(section) {
+    const data = modalContents[section];
+        document.querySelector('.modal-title-text').textContent = data.label;
+        document.querySelectorAll('.modal-nav-item').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.section === section);
+        });
+
+        document.getElementById('modal-content').innerHTML = data.sections.map(sec => `
+            <div class="modal-section">
+            <h3 class="modal-section-title">${sec.title}</h3>
+            ${sec.items.map(item => `
+                <div class="modal-card">
+                <div class="modal-class-header">
+                <span class="modal-card-name">${item.name}</span>
+                ${item.tag ? `<span class="modal-tag>${item.tag}</span>` : ''}
+                </div>
+                <p class="modal-card-desc">${item.desc}</p>
+                </div>
+
+                `).join('')}
+            </div>
+            `).join('');
+}
+
+function openModal(section) {
+    renderContent(section);
+    overlay.dataset.current = section;
+    console.log("content")
+    overlay.classList.add('open');
+    document.querySelectorAll('.dock-item').forEach(b.classList.remove('active'));
+    document.querySelector(`.dock-item[data-modal="${section}"]`).classList.add('active');
+}
