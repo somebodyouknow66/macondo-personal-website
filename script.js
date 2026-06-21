@@ -27,7 +27,7 @@ const modalContents = {
         sections: [{
             title: 'Featured',
             items: [
-                { name: 'Clarity', desc: 'Clarity is an AI-powered developer tool that eliminates the most frustrating part of software development — joining a new codebase blind.', tag: 'IBM, Hackathon', url: 'https://lablab.ai/ai-hackathons/ibm-bob-hackathon/somebodyouknow/clarity' },
+                { name: 'Clarity', desc: 'Clarity is an AI-powered developer tool that eliminates the most frustrating part of software development — joining a new codebase blind.', tag: 'IBM, Hackathon', url: 'https://lablab.ai/ai-hackathons/ibm-bob-hackathon/somebodyouknow/clarity', img:'images/clarity.png'},
             ]
         }]
     },
@@ -71,13 +71,16 @@ function renderContent(section) {
             <div class="modal-section">
             <h3 class="modal-section-title">${sec.title}</h3>
             ${sec.items.map(item => `
-                <div class="modal-card">
+                <div class="modal-card modal-card-projects">
+                <img class="modal-card-img" src="${item.img}"
                 <div class="modal-class-header">
                 <span class="modal-card-name">${item.name}</span>
                 ${item.tag ? `<span class="modal-tag>${item.tag}</span>` : ''}
                 </div>
                 <p class="modal-card-desc">${item.desc}</p>
+                <a href="${item.url}" target="_blank" class="modal-card-link"> + view project</a>
                 </div>
+        
 
                 `).join('')}
             </div>
