@@ -97,6 +97,5 @@ function openModal(section) {
     overlay.dataset.current = section;
     console.log("content")
     overlay.classList.add('open');
-    document.querySelectorAll('.dock-item').forEach(b.classList.remove('active'));
-    document.querySelector(`.dock-item[data-modal="${section}"]`).classList.add('active');
+    document.querySelectorAll('.dock-item').forEach(b => b.classList.remove('active'));
 }
