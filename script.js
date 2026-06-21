@@ -70,19 +70,33 @@ function renderContent(section) {
         document.getElementById('modal-content').innerHTML = data.sections.map(sec => `
             <div class="modal-section">
             <h3 class="modal-section-title">${sec.title}</h3>
-            ${sec.items.map(item => `
-                <div class="modal-card modal-card-projects">
-                <img class="modal-card-img" src="${item.img}"
-                <div class="modal-class-header">
-                <span class="modal-card-name">${item.name}</span>
-                ${item.tag ? `<span class="modal-tag>${item.tag}</span>` : ''}
-                </div>
-                <p class="modal-card-desc">${item.desc}</p>
-                <a href="${item.url}" target="_blank" class="modal-card-link"> + view project</a>
-                </div>
-        
-
-                `).join('')}
+            ${sec.items.map(item => {
+                if (section === 'projects'){
+                   return  `
+                    <div class="modal-card modal-card-projects">
+                    <img class="modal-card-img" src="${item.img}">
+                    <div class="modal-class-header">
+                    <span class="modal-card-name">${item.name}</span>
+                    ${item.tag ? `<span class="modal-tag">${item.tag}</span>` : ''}
+                    </div>
+                    <p class="modal-card-desc">${item.desc}</p>
+                    <a href="${item.url}" target="_blank" class="modal-card-link"> + view project</a>
+                    </div>
+               
+                    `
+                } else {
+                    return `
+                    <div class="modal-card">
+                    <div class="modal-class-header">
+                    <span class="modal-card-name">${item.name}</span>
+                    ${item.tag ? `<span class="modal-tag">${item.tag}</span>` : ''}
+                    </div>
+                    <p class="modal-card-desc">${item.desc}</p>
+                    </div>
+               
+                    `
+                }
+            }).join('')}
             </div>
             `).join('');
 }
