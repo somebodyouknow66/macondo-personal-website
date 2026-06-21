@@ -518,6 +518,7 @@ h1 {
     font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.04em;
+    display: block;
     text-transform: uppercase;
     color: rgba(40, 200, 64, 0.9);
     background: rgba(40, 200, 64, 0.12);
@@ -530,6 +531,31 @@ h1 {
     font-size: 0.78rem;
     color: rgba(245, 245, 245, 0.45);
     line-height: 1.5;
+}
+
+
+.modal-card-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin: 0;
+    margin-left: -6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.modal-card-link {
+    font-size: 0.75rem;
+    color: rgba(245, 245, 245, 0.4);
+    text-decoration: none;
+    margin-top: 4px;
+    transition: color 150ms ease;
+}
+
+.modal-card-link:hover {
+    color: whitesmoke;
 }
 
 @media (max-width: 480px) {
@@ -557,32 +583,3 @@ h1 {
     }
 }
 
-.modal-card-project {
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-    align-items: flex-start;
-}
-
-.modal-card-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin: 0;
-    border-radius: 8px;
-    flex-shrink: 0;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-
-.modal-card-link {
-    font-size: 0.75rem;
-    color: rgba(245, 245, 245, 0.4);
-    text-decoration: none;
-    margin-top: 4px;
-    transition: color 150ms ease;
-}
-
-.modal-card-link:hover {
-    color: whitesmoke;
-}
