@@ -373,3 +373,20 @@ h1 {
     filter: brightness(1.15);
     color: rgba(0, 0, 0, 0.5)
 }
+
+.modal-close {
+    background-color: #ff5f57;
+}
+
+.modal-minimize {
+    background: #febc2e;
+}
+
+.modal-maximise { 
+    background: #28c840;
+}
+
+.modal-close svg {
+    width: 6px;
+    height: 6px;
+}
