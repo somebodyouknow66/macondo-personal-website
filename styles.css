@@ -28,15 +28,17 @@
   padding: 0;
 }
 
-body {
+html, body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: black;
-  background-image: radial-gradient(
-    rgba(245, 245, 245, 0.511) 1px,
-    transparent 0
+  background: radial-gradient(
+    ellipse at bottom,
+    #22354a 0%,
+    #0a1220 -45%,
+    #05070d 100%,
   );
   background-size: 40px 40px;
   background-position: -19px -19px;
@@ -629,4 +631,107 @@ h1 {
         display: none !important;
     }
 
+}
+
+
+/* stars */
+
+.stars, 
+.stars2,
+.stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+        25px 80px #cfe8ff,
+        120px 220px #cfe8ff,
+        180px 40px #cfe8ff,
+        300px 140px #cfe8ff,
+        420px 90px #cfe8ff,
+        510px 260px #cfe8ff,
+        680px 180px #cfe8ff,
+        790px 60px #cfe8ff,
+        920px 320px #cfe8ff,
+        1100px 150px #cfe8ff,
+        1250px 70px #cfe8ff,
+        1380px 250px #cfe8ff,
+        1520px 110px #cfe8ff,
+        1660px 290px #cfe8ff,
+        1800px 90px #cfe8ff,
+        1940px 200px #cfe8ff,
+        150px 500px #cfe8ff,
+        350px 650px #cfe8ff,
+        620px 450px #cfe8ff,
+        870px 580px #cfe8ff,
+        1120px 720px #cfe8ff,
+        1450px 540px #cfe8ff,
+        1710px 680px #cfe8ff,
+        1890px 470px #cfe8ff;
+  filter: drop-shadow(0 0 2px rgba(180, 220, 225, .8));
+  animation: animStar 50s linear infinite;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  box-shadow: inherit;
+}
+
+.stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow:
+        100px 180px #dff1ff,
+        280px 340px #dff1ff,
+        520px 120px #dff1ff,
+        740px 280px #dff1ff,
+        980px 80px #dff1ff,
+        1240px 360px #dff1ff,
+        1480px 140px #dff1ff,
+        1730px 300px #dff1ff,
+        1900px 170px #dff1ff,
+        220px 700px #dff1ff,
+        610px 560px #dff1ff,
+        1010px 630px #dff1ff,
+        1540px 730px #dff1ff;
+    filter: drop-shadow(0 0 4px rgba(190, 255, 255, .9));
+    animation: animStar 100s linear infinite;
+}
+
+.stars3 {
+  width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow:
+        180px 250px #ffffff,
+        560px 120px #ffffff,
+        930px 320px #ffffff,
+        1290px 180px #ffffff,
+        1680px 260px #ffffff,
+        350px 640px #ffffff,
+        820px 540px #ffffff,
+        1420px 690px #ffffff;
+    filter: drop-shadow(0 0 8px rgba(220,240,255,1));
+    animation: animStar 150s linear infinite;
+ }
+
+
+@keyframes animStar {
+  from {
+    transform: translateY(0)
+  }
+  to {
+    transform: translateY(-2000px)
+  }
 }
