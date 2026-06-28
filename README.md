@@ -162,7 +162,8 @@ that was experimentation, some of it was debugging, and some of it was GitHub
 Desktop doing GitHub Desktop things. Some code ended up duplicated along the 
 way.
 
-I cleaned the code bcz stupid cat was not working for another hour and I was thinking, like wtf is going on. It fixed the stupid bug/
+I cleaned the code bcz stupid cat was not working for another hour and I was thinking, like wtf is going on. It fixed the stupid bug
+
 ---
 
 ## Fonts, Tooltips and Other Things
